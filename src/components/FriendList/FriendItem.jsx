@@ -1,14 +1,29 @@
 import PropTypes from 'prop-types';
+import {FriensdItem,Label,Avatar,Name} from './FriendList.styled';
 
 export function FriendItem ({friend}) {
     const { avatar, name, isOnline } = friend;
     return (
-      <div>
-        <span>{isOnline}</span>
-        <img  src={avatar} alt="User avatar" width="48" />
-        <p >{name}</p>
-      </div>
+      <FriensdItem>
+        <Label style={{
+                backgroundColor: getBgColor(friend.isOnline),
+              }}
+              >{isOnline}</Label>
+        <Avatar  src={avatar} alt="User avatar" width="48" />
+        <Name >{name}</Name>
+      </FriensdItem>
     );
+  };
+
+  const getBgColor = isOnline => {
+    switch (isOnline) {
+      case true:
+        return 'green';
+      case false:
+        return 'red';
+      default:
+        return 'pink';
+    }
   };
   
   FriendItem.propTypes = {
