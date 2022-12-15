@@ -18,7 +18,7 @@ export const FriendsUl = styled.ul`
   width: 100%;
 `
 
-export const FriensdItem = styled.div`
+export const FriensdItem = styled.li`
   margin: 0;
   display:flex;
   align-items: center;

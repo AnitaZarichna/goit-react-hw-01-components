@@ -13,11 +13,11 @@ export function TransactionHistory ({ transactions }) {
                     </TransactionTr>
                     </TransactionHead>
                     <TransactionBody>
-                    {transactions.map(transaction => (
-                        <TransactionBodyTr key={transaction.id}>
-                            <TransactionBodyTd>{transaction.type}</TransactionBodyTd>
-                            <TransactionBodyTd>{transaction.amount}</TransactionBodyTd>
-                            <TransactionBodyTd>{transaction.currency}</TransactionBodyTd>
+                    {transactions.map(({id, type, amount,currency}) => (
+                        <TransactionBodyTr key={id}>
+                            <TransactionBodyTd>{type}</TransactionBodyTd>
+                            <TransactionBodyTd>{amount}</TransactionBodyTd>
+                            <TransactionBodyTd>{currency}</TransactionBodyTd>
                         </TransactionBodyTr>
                     ))}
                     </TransactionBody>

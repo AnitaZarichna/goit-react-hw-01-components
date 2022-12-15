@@ -16,8 +16,10 @@ export const FriendList = ({friends}) => {
     )
 }
 
-FriendItem.protoTypes = {
-    avatar: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    isOnlane: PropTypes.bool.isRequired,
+FriendList.propTypes = {
+    friends: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+        })
+    ),
 };

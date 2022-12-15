@@ -27,9 +27,9 @@ export function FriendItem ({friend}) {
   };
   
   FriendItem.propTypes = {
-    friends: PropTypes.shape({
-      avatar: PropTypes.string,
-      name: PropTypes.string,
-      isOnline: PropTypes.bool,
+    friend: PropTypes.shape({
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired
     }),
   };

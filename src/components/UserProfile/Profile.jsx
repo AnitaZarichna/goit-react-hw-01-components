@@ -6,9 +6,9 @@ export const ProfileCard = ({
     tag,
     location,
     avatar,
-    stats}) => {
+    stats: { followers, views, likes }}) => {
     return (
-    <Profile key={tag}>
+    <Profile>
         <Main>
             <Photo src={avatar} alt="User avatar"></Photo>
             <UserName>{username}</UserName>
@@ -17,25 +17,25 @@ export const ProfileCard = ({
         </Main>
         <Stats>
             <StatsItem><Label>Followers</Label>
-             <Quantity>{stats.followers}</Quantity></StatsItem>
+             <Quantity>{followers}</Quantity></StatsItem>
              <StatsItem> <Label>Views</Label>
-             <Quantity>{stats.views}</Quantity></StatsItem>
+             <Quantity>{views}</Quantity></StatsItem>
              <StatsItem> <Label>Likes</Label>
-             <Quantity>{stats.likes}</Quantity></StatsItem>
+             <Quantity>{likes}</Quantity></StatsItem>
         </Stats>
     </Profile>
     );
   };
   ProfileCard.propTypes = {
     profile: PropTypes.shape({
-      username: PropTypes.string,
-      tag: PropTypes.string,
-      location: PropTypes.string,
-      avatar: PropTypes.string,
+      username: PropTypes.string.isRequired,
+      tag: PropTypes.string.isRequired,
+      location: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
       stats: PropTypes.shape({
-        followers: PropTypes.number,
-        views: PropTypes.number,
-        likes: PropTypes.number,
+        followers: PropTypes.number.isRequired,
+        views: PropTypes.number.isRequired,
+        likes: PropTypes.number.isRequired,
       }),
     }),
   };
